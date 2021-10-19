@@ -20,7 +20,7 @@ public class Tweet : MonoBehaviour
             text = "「mRNA GAME」にチャレンジしたよ！";
         }
         linkUrl = "https://blog.rogiken.org/";
-        hashtags = "rogy";
+        hashtags = "rogy,工大祭2021";
         var url = "https://twitter.com/intent/tweet?"
             + "text=" + text
             + "&url=" + linkUrl
