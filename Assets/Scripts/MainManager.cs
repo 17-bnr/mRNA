@@ -8,13 +8,14 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager instance = null;
     public float now_time;
-    public int RNA_num = 0;
-    //public int DNA_num = 0;
     public int[] DNA_num = new int[3];
+    public int[] RNA_num = new int[3];
+    public int RNA_num1 = 0;
     public Text DNAText;
     public Text DNAText1;
     public Text DNAText2;
     int display_flag = 0;
+    bool judge_flag = true;
     
     private void Awake(){
         if(instance==null){
@@ -28,6 +29,7 @@ public class MainManager : MonoBehaviour
     void Start()
     {
         now_time = 0;
+
     }
 
     // Update is called once per frame
@@ -36,10 +38,20 @@ public class MainManager : MonoBehaviour
         now_time += Time.deltaTime;
         if(display_flag==0){
             DisplayDNA();
-        }else if(RNA_num!=0 && DNA_num[0]==RNA_num){
-            GameOver("CLEAR","SCORE:"+now_time.ToString("F4")+"s");
-        }else if(RNA_num!=0 && DNA_num[0]!=RNA_num){
-            GameOver("GAME OVER","PLEASE RETRY");
+            RNA_num[0] = RNA_num1;
+            RNA_num[1] = 0;
+            RNA_num[2] = 0;
+        }else{
+            for(int i=0;i<3;i++){
+                if(RNA_num[i]!=0){
+                    if(!Judge(i)){
+                        GameOver("GAME OVER","PLEASE RETRY");
+                    }
+                }
+            }
+            if(RNA_num[0]*RNA_num[1]*RNA_num[2]!=0){
+                GameOver("CLEAR","SCORE:"+now_time.ToString("F4")+"s");
+            }
         }
     }
 
@@ -105,5 +117,13 @@ public class MainManager : MonoBehaviour
             break;
         }  
         display_flag  = 1;
+    }
+
+    private bool Judge(int i){
+        if(RNA_num[i]!=DNA_num[i]){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

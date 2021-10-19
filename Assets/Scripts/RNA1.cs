@@ -3,44 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RNA : MonoBehaviour
+public class RNA1 : MonoBehaviour
 {
-    public Text RNAText;
+    public Text RNAText1;
     private bool firstPush = false;
 
     public void pressA(){
         if(!firstPush){
             Debug.Log("press A");
-            RNAText.text = "A";
+            RNAText1.text = "A";
             firstPush = true;
-            MainManager.instance.RNA_num[0] = 4;
+            MainManager.instance.RNA_num[1] = 4;
         }
     }
 
     public void pressC(){
         if(!firstPush){
             Debug.Log("press C");
-            RNAText.text = "C";
+            RNAText1.text = "C";
             firstPush = true;
-            MainManager.instance.RNA_num[0] = 3;
+            MainManager.instance.RNA_num[1] = 3;
         }
     }
 
     public void pressG(){
         if(!firstPush){
             Debug.Log("press G");
-            RNAText.text = "G";
+            RNAText1.text = "G";
             firstPush = true;
-            MainManager.instance.RNA_num[0] = 2;
+            MainManager.instance.RNA_num[1] = 2;
         }
     }
 
     public void pressU(){
         if(!firstPush){
             Debug.Log("press U");
-            RNAText.text = "U";
+            RNAText1.text = "U";
             firstPush = true;
-            MainManager.instance.RNA_num[0] = 1;
+            MainManager.instance.RNA_num[1] = 1;
         }
     }
     // Start is called before the first frame update
