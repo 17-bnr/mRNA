@@ -9,8 +9,11 @@ public class MainManager : MonoBehaviour
     public static MainManager instance = null;
     public float now_time;
     public int RNA_num = 0;
-    public int DNA_num = 0;
+    //public int DNA_num = 0;
+    public int[] DNA_num = new int[3];
     public Text DNAText;
+    public Text DNAText1;
+    public Text DNAText2;
     int display_flag = 0;
     
     private void Awake(){
@@ -33,9 +36,9 @@ public class MainManager : MonoBehaviour
         now_time += Time.deltaTime;
         if(display_flag==0){
             DisplayDNA();
-        }else if(RNA_num!=0 && DNA_num==RNA_num){
+        }else if(RNA_num!=0 && DNA_num[0]==RNA_num){
             GameOver("CLEAR","SCORE:"+now_time.ToString("F4")+"s");
-        }else if(RNA_num!=0 && DNA_num!=RNA_num){
+        }else if(RNA_num!=0 && DNA_num[0]!=RNA_num){
             GameOver("GAME OVER","PLEASE RETRY");
         }
     }
@@ -47,8 +50,8 @@ public class MainManager : MonoBehaviour
     }
 
     private void DisplayDNA(){
-        DNA_num = Random.Range(1,5);
-        switch(DNA_num){
+        DNA_num[0] = Random.Range(1,5);
+        switch(DNA_num[0]){
             case 1:
             DNAText.text = "A";
             break;
@@ -65,6 +68,42 @@ public class MainManager : MonoBehaviour
             DNAText.text = "T";
             break;
         }
+        DNA_num[1] = Random.Range(1,5);
+        switch(DNA_num[1]){
+            case 1:
+            DNAText1.text = "A";
+            break;
+
+            case 2:
+            DNAText1.text = "C";
+            break;
+
+            case 3:
+            DNAText1.text = "G";
+            break;
+
+            case 4:
+            DNAText1.text = "T";
+            break;
+        }
+        DNA_num[2] = Random.Range(1,5);
+        switch(DNA_num[2]){
+            case 1:
+            DNAText2.text = "A";
+            break;
+
+            case 2:
+            DNAText2.text = "C";
+            break;
+
+            case 3:
+            DNAText2.text = "G";
+            break;
+
+            case 4:
+            DNAText2.text = "T";
+            break;
+        }  
         display_flag  = 1;
     }
 }
