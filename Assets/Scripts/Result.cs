@@ -11,7 +11,11 @@ public class Result : MonoBehaviour
     void Start()
     {
         ResultText.text = DataSender.result_text;
-        ResultScore.text  = DataSender.result_score;
+        if(DataSender.clear_flag==1){
+            ResultScore.text  = "SCORE:"+DataSender.result_score+"s";
+        }else{
+            ResultScore.text  = DataSender.result_score;
+        }
     }
 
     // Update is called once per frame

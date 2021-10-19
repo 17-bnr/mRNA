@@ -42,7 +42,7 @@ public class MainManager : MonoBehaviour
             for(int i=0;i<3;i++){
                 if(RNA_num[i]!=0){
                     if(!Judge(i)){
-                        GameOver("GAME OVER","PLEASE RETRY");
+                        GameOver(0,"GAME OVER","PLEASE RETRY");
                     }
                 }
             }
@@ -54,13 +54,14 @@ public class MainManager : MonoBehaviour
                     display_flag = 0;
                     stage_num--;
                 }else{
-                    GameOver("CLEAR","SCORE:"+now_time.ToString("F4")+"s");
+                    GameOver(1,"CLEAR",now_time.ToString("F4"));
                 }
             }
         }
     }
 
-    public void GameOver(string result_text,string result_score){
+    public void GameOver(int clear_flag,string result_text,string result_score){
+        DataSender.clear_flag = clear_flag;
         DataSender.result_text = result_text;
         DataSender.result_score = result_score;
         SceneManager.LoadScene("Result");
