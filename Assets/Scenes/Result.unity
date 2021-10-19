@@ -879,9 +879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d522faa9736dd5840b2f097dbd5157f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\u306EmRNA noGAME"
-  linkUrl: https://blog.rogiken.org/
-  hashtags: "rogy,\u5DE5\u5927\u796D2021"
+  text: 
+  linkUrl: 
+  hashtags: 
 --- !u!114 &1957962826
 MonoBehaviour:
   m_ObjectHideFlags: 0
