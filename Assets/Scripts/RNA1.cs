@@ -52,6 +52,9 @@ public class RNA1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(MainManager.instance.RNA_num[1]==0){
+            RNAText1.text = "?";
+            firstPush = false;
+        }
     }
 }

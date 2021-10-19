@@ -15,6 +15,7 @@ public class MainManager : MonoBehaviour
     public Text DNAText2;
     int display_flag = 0;
     bool judge_flag = true;
+    int stage_num=2;
     
     private void Awake(){
         if(instance==null){
@@ -46,7 +47,15 @@ public class MainManager : MonoBehaviour
                 }
             }
             if(RNA_num[0]*RNA_num[1]*RNA_num[2]!=0){
-                GameOver("CLEAR","SCORE:"+now_time.ToString("F4")+"s");
+                if(stage_num>0){
+                    RNA_num[0] = 0;
+                    RNA_num[1] = 0;
+                    RNA_num[2] = 0;
+                    display_flag = 0;
+                    stage_num--;
+                }else{
+                    GameOver("CLEAR","SCORE:"+now_time.ToString("F4")+"s");
+                }
             }
         }
     }
