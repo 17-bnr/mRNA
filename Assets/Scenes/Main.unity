@@ -207,7 +207,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 559383724}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA2, Assembly-CSharp
         m_MethodName: pressA
         m_Mode: 1
         m_Arguments:
@@ -519,9 +519,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   now_time: 0
-  RNA_num: 0
-  DNA_num: 0
+  DNA_num: 000000000000000000000000
+  RNA_num: 000000000000000000000000
+  RNA_num1: 0
   DNAText: {fileID: 1871573109}
+  DNAText1: {fileID: 913068837}
+  DNAText2: {fileID: 384040516}
 --- !u!4 &261233180
 Transform:
   m_ObjectHideFlags: 0
@@ -1191,7 +1194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -10}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 160, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494170298
@@ -1203,10 +1206,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 494170296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a748983f963340468c85100d4c68345, type: 3}
+  m_Script: {fileID: 11500000, guid: 7eabadecf45e110489be81a15bd8a162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RNAText: {fileID: 494170299}
+  RNAText1: {fileID: 494170299}
 --- !u!114 &494170299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,7 +1336,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 494170298}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA1, Assembly-CSharp
         m_MethodName: pressU
         m_Mode: 1
         m_Arguments:
@@ -1566,10 +1569,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 559383722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a748983f963340468c85100d4c68345, type: 3}
+  m_Script: {fileID: 11500000, guid: 98acff9a34aac204d9bdaa77353df19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RNAText: {fileID: 559383725}
+  RNAText2: {fileID: 559383725}
 --- !u!114 &559383725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,7 +1699,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 559383724}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA2, Assembly-CSharp
         m_MethodName: pressU
         m_Mode: 1
         m_Arguments:
@@ -2120,7 +2123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 559383724}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA2, Assembly-CSharp
         m_MethodName: pressG
         m_Mode: 1
         m_Arguments:
@@ -2438,7 +2441,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 494170298}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA1, Assembly-CSharp
         m_MethodName: pressG
         m_Mode: 1
         m_Arguments:
@@ -2862,7 +2865,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 494170298}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA1, Assembly-CSharp
         m_MethodName: pressA
         m_Mode: 1
         m_Arguments:
@@ -2995,7 +2998,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 494170298}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA1, Assembly-CSharp
         m_MethodName: pressC
         m_Mode: 1
         m_Arguments:
@@ -3286,7 +3289,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 559383724}
-        m_TargetAssemblyTypeName: RNA, Assembly-CSharp
+        m_TargetAssemblyTypeName: RNA2, Assembly-CSharp
         m_MethodName: pressC
         m_Mode: 1
         m_Arguments:

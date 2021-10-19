@@ -10,7 +10,6 @@ public class MainManager : MonoBehaviour
     public float now_time;
     public int[] DNA_num = new int[3];
     public int[] RNA_num = new int[3];
-    public int RNA_num1 = 0;
     public Text DNAText;
     public Text DNAText1;
     public Text DNAText2;
@@ -38,9 +37,6 @@ public class MainManager : MonoBehaviour
         now_time += Time.deltaTime;
         if(display_flag==0){
             DisplayDNA();
-            RNA_num[0] = RNA_num1;
-            RNA_num[1] = 0;
-            RNA_num[2] = 0;
         }else{
             for(int i=0;i<3;i++){
                 if(RNA_num[i]!=0){
