@@ -7,6 +7,10 @@ public class RNA1 : MonoBehaviour
 {
     public Text RNAText1;
     private bool firstPush = false;
+    public Button A;
+    public Button C;
+    public Button G;
+    public Button U;
 
     public void pressA(){
         if(!firstPush){
@@ -55,6 +59,18 @@ public class RNA1 : MonoBehaviour
         if(MainManager.instance.RNA_num[1]==0){
             RNAText1.text = "?";
             firstPush = false;
+        }
+        if(firstPush==false){
+            A.interactable = true;
+            C.interactable = true;
+            G.interactable = true;
+            U.interactable = true;
+        }
+        if(firstPush==true){
+            A.interactable = false;
+            C.interactable = false;
+            G.interactable = false;
+            U.interactable = false;
         }
     }
 }
