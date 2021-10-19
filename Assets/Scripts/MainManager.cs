@@ -67,7 +67,41 @@ public class MainManager : MonoBehaviour
     }
 
     private void DisplayDNA(){
-        DNA_num[0] = Random.Range(1,5);
+        do{
+            DNA_num[0] = Random.Range(1,5);
+            DNA_num[1] = Random.Range(1,5);
+            DNA_num[2] = Random.Range(1,5);
+        }while(!final());
+
+        if(stage_num==2){
+            DNA_num[0] = 4;
+            DNA_num[1] = 1;
+            DNA_num[2] = 2;
+            /* RNA = AUG*/
+        }
+
+        if(stage_num==0){
+            int final_num = Random.Range(1,4);
+            switch(final_num){
+                case 1:
+                DNA_num[0]=1;
+                DNA_num[1]=4;
+                DNA_num[2]=4;
+                break;
+
+                case 2:
+                DNA_num[0]=1;
+                DNA_num[1]=4;
+                DNA_num[2]=2;
+                break;
+
+                case 3:
+                DNA_num[0]=1;
+                DNA_num[1]=2;
+                DNA_num[2]=4;
+                break;
+            }
+        }
         switch(DNA_num[0]){
             case 1:
             DNAText.text = "A";
@@ -85,7 +119,6 @@ public class MainManager : MonoBehaviour
             DNAText.text = "T";
             break;
         }
-        DNA_num[1] = Random.Range(1,5);
         switch(DNA_num[1]){
             case 1:
             DNAText1.text = "A";
@@ -103,7 +136,6 @@ public class MainManager : MonoBehaviour
             DNAText1.text = "T";
             break;
         }
-        DNA_num[2] = Random.Range(1,5);
         switch(DNA_num[2]){
             case 1:
             DNAText2.text = "A";
@@ -127,6 +159,21 @@ public class MainManager : MonoBehaviour
     private bool Judge(int i){
         if(RNA_num[i]!=DNA_num[i]){
             return false;
+        }else{
+            return true;
+        }
+    }
+
+    private bool final(){
+        if(DNA_num[0]==1&&DNA_num[1]==4&&DNA_num[2]==4){
+            return false;
+            /* RNA = UAA*/
+        }else if(DNA_num[0]==1&&DNA_num[1]==4&&DNA_num[2]==2){
+            return false;
+            /* RNA = UAG*/
+        }else if(DNA_num[0]==1&&DNA_num[1]==2&&DNA_num[2]==4){
+            return false;
+            /* RNA = UGA*/
         }else{
             return true;
         }
