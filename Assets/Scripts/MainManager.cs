@@ -15,7 +15,8 @@ public class MainManager : MonoBehaviour
     public Text DNAText2;
     int display_flag = 0;
     bool judge_flag = true;
-    int stage_num=2;
+    int stage_num=3;
+    public Text question_text;
     
     private void Awake(){
         if(instance==null){
@@ -38,6 +39,15 @@ public class MainManager : MonoBehaviour
         now_time += Time.deltaTime;
         if(display_flag==0){
             DisplayDNA();
+            if(stage_num==3){
+                question_text.text = "Q1";
+            }else if(stage_num==2){
+                question_text.text = "Q2";
+            }else if(stage_num==1){
+                question_text.text = "Q3";
+            }else{
+                question_text.text = "Q4";
+            }
         }else{
             for(int i=0;i<3;i++){
                 if(RNA_num[i]!=0){
@@ -74,7 +84,7 @@ public class MainManager : MonoBehaviour
             DNA_num[2] = Random.Range(1,5);
         }while(!final());
 
-        if(stage_num==2){
+        if(stage_num==3){
             DNA_num[0] = 4;
             DNA_num[1] = 1;
             DNA_num[2] = 2;
