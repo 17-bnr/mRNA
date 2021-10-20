@@ -1,1 +1,1 @@
-<iframe class="iframe-inner" frameborder="0" id="webgl-frame" scrolling="auto" src="https://object-storage.tyo1.conoha.io/v1/nc_df3bdbc45bc04950b558834f5728517a/unityroom_production/game/24617/webgl/play.html"></iframe>
+<iframe width="524px" height="294.75px" src="https://object-storage.tyo1.conoha.io/v1/nc_df3bdbc45bc04950b558834f5728517a/unityroom_production/game/24617/webgl/play.html" frameborder="0" allowfullscreen></iframe>
