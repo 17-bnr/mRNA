@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Tweet : MonoBehaviour
 {
-        // 各種パラメーターはインスペクターから設定する
+    private bool firstPush = false;
+    // 各種パラメーターはインスペクターから設定する
     //public Button tweetButton;                        // ツイートするボタン
     public string text;    // ツイートに挿入するテキスト
     public string linkUrl;   // ツイートに挿入するURL
@@ -30,15 +31,25 @@ public class Tweet : MonoBehaviour
             Application.OpenURL ( url );
         #elif UNITY_WEBGL
             // WebGLの場合は、ゲームプレイ画面と同じウィンドウでツイート画面が開かないよう、処理を変える
-            Application.ExternalEval(string.Format("window.open('{0}','_blank')", url));
+            //Application.ExternalEval(string.Format("window.open('{0}','_blank')", url));
+            Application.OpenURL(url);
         #else
             Application.OpenURL(url);
         #endif
     }
 
     public void TweetButton(){
+        Debug.Log("press tweet");
+        
+        if(!firstPush){
+            Debug.Log("tweet");
+            firstPush = true;
+            Tweeting(DataSender.clear_flag);
+        }
+    }
 
-        Tweeting(DataSender.clear_flag);
+    void FixedUpdate(){
+
     }
     // Start is called before the first frame update
     void Start()
