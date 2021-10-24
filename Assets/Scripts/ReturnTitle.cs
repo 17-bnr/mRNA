@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Runtime.InteropServices;   // DllImportを使うために必要
+//using System.Runtime.InteropServices;   // DllImportを使うために必要
 
 public class ReturnTitle : MonoBehaviour
 {
-        // 新しいタブでURLを開く
+     /*   // 新しいタブでURLを開く
     #if !UNITY_EDITOR && UNITY_WEBGL
         // WebGLビルドで有効になる
         [DllImport("__Internal")]
@@ -14,7 +14,7 @@ public class ReturnTitle : MonoBehaviour
     #else
         // UnityエディタやWebGL以外のプラットフォームで有効になる
         private static void OpenNewTab(string url) => Application.OpenURL(url);
-    #endif
+    #endif*/
         private bool firstPush = false;
 
     public void PressReturn(){
@@ -23,7 +23,7 @@ public class ReturnTitle : MonoBehaviour
         if(!firstPush){
             Debug.Log("Go Next Scene");
             firstPush = true;
-            OpenNewTab("https://twitter.com/home");
+            //OpenNewTab("https://twitter.com/home");
             SceneManager.LoadScene("Title");
         }
     }

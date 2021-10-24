@@ -27,15 +27,7 @@ public class Tweet : MonoBehaviour
             + "&url=" + linkUrl
             + "&hashtags=" + hashtags;
 
-        #if UNITY_EDITOR
-            Application.OpenURL ( url );
-        #elif UNITY_WEBGL
-            // WebGLの場合は、ゲームプレイ画面と同じウィンドウでツイート画面が開かないよう、処理を変える
-            //Application.ExternalEval(string.Format("window.open('{0}','_blank')", url));
-            Application.OpenURL(url);
-        #else
-            Application.OpenURL(url);
-        #endif
+        Application.OpenURL ( url );
     }
 
     public void TweetButton(){
