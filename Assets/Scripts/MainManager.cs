@@ -17,6 +17,7 @@ public class MainManager : MonoBehaviour
     bool judge_flag = true;
     int stage_num=3;
     public Text question_text;
+    public Text time;
     
     private void Awake(){
         if(instance==null){
@@ -37,6 +38,7 @@ public class MainManager : MonoBehaviour
     void Update()
     {
         now_time += Time.deltaTime;
+        time.text = now_time.ToString("F4")+"s";
         if(display_flag==0){
             DisplayDNA();
             if(stage_num==3){
