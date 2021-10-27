@@ -16,12 +16,12 @@ public class Tweet : MonoBehaviour
     private void Tweeting (int clear_flag)
     {
         if(clear_flag==1){
-            text = "「mRNA GAME」を"+DataSender.result_score+"秒でクリアしました！";
+            text = "「mRNAGAME」を"+DataSender.result_score+"秒でクリアしました！";
         }else{
-            text = "「mRNA GAME」にチャレンジしたよ！";
+            text = "「mRNAGAME」にチャレンジしたよ！";
         }
-        linkUrl = "https://blog.rogiken.org/";
-        hashtags = "rogy,工大祭2021";
+        linkUrl = "https://blog.rogiken.org/blog/2021/10/28/mrnagame/";
+        hashtags = "mRNAGAME,工大祭2021";
         var url = "https://twitter.com/intent/tweet?"
             + "text=" + text
             + "&url=" + linkUrl
